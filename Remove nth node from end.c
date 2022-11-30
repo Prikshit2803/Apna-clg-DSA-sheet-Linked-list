@@ -47,8 +47,10 @@ public:
         return head;*/
 
          The following approach works 
-        /*int cnt=0;
-         ListNode* cur=head;
+        int cnt=0;
+         ListNode * start= new ListNode();
+           start->next=head;
+         ListNode* cur=start->next;
 
          if(n==1 && head->next==NULL||head==NULL) return NULL;
         while(cur && cur->next){
@@ -59,18 +61,18 @@ public:
         if(k<0){
             return head->next;
         }
-        ListNode* c=head;
+        ListNode* c=start->next;
        /* while(k>=0){
            // p=c;
             c=c->next;
             k--;
-        }
+        }*/
         for(int i=0;i<k;i++){
             c=c->next;
             
         }
         c->next=c->next->next;
-        return head;*/
+        return start->next;
            
 // approach works
            ListNode * start= new ListNode();
@@ -92,8 +94,40 @@ public:
         }
         
         s->next=s->next->next;
+        return start->next;
+        
+    }
 
         return start->next;
 
     }
 };
+
+//Slight changes
+
+int cnt=0;
+         /*ListNode * start= new ListNode();
+           start->next=head;*/
+         ListNode* cur=head;
+
+         if(n==1 && head->next==NULL||head==NULL) return NULL;
+        while(cur && cur->next){
+            cur=cur->next;
+            cnt++;
+        }
+        int k=cnt-n;
+        if(k<0){
+            return head->next;
+        }
+        ListNode* c=head;
+        while(k>0){
+           // p=c;
+            c=c->next;
+            k--;
+        }
+       /* for(int i=0;i<k;i++){
+            c=c->next;
+            
+        }*/
+        c->next=c->next->next;
+        return head;
