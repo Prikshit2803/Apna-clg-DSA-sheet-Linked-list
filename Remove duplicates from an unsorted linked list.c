@@ -24,7 +24,7 @@ class Solution
     }
 };
 
-///Another code
+///Another method 
 Node * removeDuplicates( Node *head) 
 
     {
