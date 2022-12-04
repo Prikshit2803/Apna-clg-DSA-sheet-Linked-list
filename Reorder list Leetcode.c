@@ -59,6 +59,8 @@ public:
               p=prev;
 
           }*/
+        
+        //we use slow and fast to get to the middle of the listand when we find middle we make the end part as sec aand reverse sec
 
            ListNode * slow = head;
            ListNode * fast = head->next;
